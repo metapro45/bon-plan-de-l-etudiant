@@ -54,7 +54,7 @@
  *                 → le bouton WhatsApp inclut aussi le titre et le prix automatiquement
  *
  * =====================================================
- **/**
+ */
 
 const products = [
 
