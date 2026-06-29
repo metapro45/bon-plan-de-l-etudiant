@@ -14,6 +14,47 @@
  * Si prixOriginal > prix → badge "Promo -XX%" affiché automatiquement
  * Si stock <= 2 et > 0  → badge "Stock faible" affiché automatiquement
  * Si stock = 0          → article masqué du catalogue
+
+ /**
+ * =====================================================
+ * FICHIER DE GESTION DES ARTICLES
+ * Bon Plan de l'Étudiant — v2
+ * =====================================================
+ *
+ * COMMENT AJOUTER UN ARTICLE :
+ * 1. Copie un bloc { ... } existant
+ * 2. Colle-le dans le tableau products[]
+ * 3. Remplis les champs (voir guide ci-dessous)
+ * 4. Sauvegarde le fichier et commit sur GitHub
+ *
+ * ─── TOUS LES CHAMPS DISPONIBLES ───────────────────
+ *
+ * - id          : numéro unique (incrémente à chaque ajout)
+ * - titre       : nom de l'article
+ * - categorie   : nom de la catégorie
+ *                 → écrire un nouveau nom crée une nouvelle catégorie automatiquement
+ * - prix        : prix de vente en euros (nombre entier)
+ * - prixOriginal: prix original barré (optionnel → mettre null si pas voulu)
+ *                 → si prixOriginal > prix, le badge "-XX%" s'affiche automatiquement
+ * - etat        : état de l'article, 4 valeurs possibles :
+ *                 "Excellent" | "Très bon" | "Bon" | "Correct"
+ * - stock       : quantité disponible (nombre entier)
+ *                 → 0        = article masqué automatiquement du catalogue
+ *                 → 1 ou 2   = badge "⚡ Plus que X" affiché automatiquement
+ *                 → 3 et +   = affiche "X disponibles" en vert
+ * - nouveaute   : true  = badge "🆕 Nouveau" affiché
+ *                 false = pas de badge
+ * - dateAjout   : date d'ajout au format "YYYY-MM-DD" (ex: "2025-06-29")
+ *                 → utilisée pour le tri "Nouveautés"
+ * - description : courte description de l'article (1-2 phrases)
+ * - emoji       : emoji affiché si pas d'image (ex: "📱", "👕", "💻")
+ * - image       : chemin vers une image locale (ex: "images/iphone.jpg")
+ *                 → mettre null si pas d'image
+ * - lienVinted  : lien direct vers l'annonce Vinted (obligatoire)
+ *                 → le bouton WhatsApp inclut aussi le titre et le prix automatiquement
+ *
+ * =====================================================
+ */
  * =====================================================
  */
 
