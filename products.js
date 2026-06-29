@@ -4,23 +4,6 @@
  * Bon Plan de l'Étudiant — v2
  * =====================================================
  *
- * NOUVEAUX CHAMPS :
- * - stock      : quantité disponible (0 = vendu, masqué automatiquement)
- * - nouveaute  : true si tu veux afficher le badge "Nouveau"
- * - dateAjout  : date d'ajout "YYYY-MM-DD" (pour tri nouveautés)
- *
- * ÉTATS : "Excellent" | "Très bon" | "Bon" | "Correct"
- *
- * Si prixOriginal > prix → badge "Promo -XX%" affiché automatiquement
- * Si stock <= 2 et > 0  → badge "Stock faible" affiché automatiquement
- * Si stock = 0          → article masqué du catalogue
-
- /**
- * =====================================================
- * FICHIER DE GESTION DES ARTICLES
- * Bon Plan de l'Étudiant — v2
- * =====================================================
- *
  * COMMENT AJOUTER UN ARTICLE :
  * 1. Copie un bloc { ... } existant
  * 2. Colle-le dans le tableau products[]
