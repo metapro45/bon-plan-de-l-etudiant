@@ -627,3 +627,199 @@ footer p {
 
   .card-price { font-size: 20px; }
 }
+
+/* ===========================
+   V2 — STOCK, BADGES, TRI,
+   SUGGESTIONS
+=========================== */
+
+/* ===== IMAGE WRAP + BADGES ===== */
+.card-img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-badges {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 2;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(6px);
+}
+
+.badge-new {
+  background: rgba(124,58,237,0.92);
+  color: white;
+}
+
+.badge-promo {
+  background: rgba(255,107,53,0.92);
+  color: white;
+}
+
+.badge-low {
+  background: rgba(255,214,0,0.95);
+  color: #78350F;
+}
+
+/* ===== STOCK BAR ===== */
+.stock-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.stock-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.stock-bar.ok {
+  background: var(--green-light);
+  color: #00A87B;
+}
+.stock-bar.ok .stock-dot { background: var(--green); }
+
+.stock-bar.low {
+  background: #FFFBE6;
+  color: #B45309;
+}
+.stock-bar.low .stock-dot { background: #F59E0B; animation: pulse 1.2s infinite; }
+
+.stock-bar.sold {
+  background: #FEF2F2;
+  color: #DC2626;
+}
+.stock-bar.sold .stock-dot { background: #EF4444; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.4); }
+}
+
+/* ===== PRIX + STOCK ROW ===== */
+.card-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.prix-barre {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+  text-decoration: line-through;
+  margin-left: 6px;
+}
+
+/* ===== FILTRE TOP (search + tri) ===== */
+.filter-top {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.tri-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  transition: border-color 0.2s;
+  cursor: pointer;
+}
+
+.tri-wrap:focus-within {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(124,58,237,0.1);
+}
+
+.tri-wrap svg { color: var(--muted); flex-shrink: 0; }
+
+.tri-wrap select {
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--dark);
+  background: transparent;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+/* ===== SUGGESTIONS ===== */
+.suggestions-section {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #F8FAFF 0%, #F3EFFE 100%);
+  border-radius: var(--radius);
+  padding: 24px;
+  border: 1.5px solid rgba(124,58,237,0.15);
+  animation: fadeSlide 0.25s ease;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.suggestions-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--purple);
+  margin-bottom: 16px;
+}
+
+.suggestions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.suggestion-card {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.suggestion-card:hover { transform: scale(1); }
+
+/* ===== CARTE CLIQUABLE ===== */
+.product-card { cursor: pointer; }
+
+/* ===== RESPONSIVE V2 ===== */
+@media (max-width: 768px) {
+  .filter-top { flex-direction: column; }
+  .tri-wrap select { min-width: 120px; }
+  .card-price-row { flex-direction: column; align-items: flex-start; }
+  .suggestions-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .suggestions-grid { grid-template-columns: 1fr; }
+}
